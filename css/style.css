@@ -1,0 +1,645 @@
+/* ============================================
+   Языковая школа — мультяшный розовый стиль
+   ============================================ */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Patrick+Hand&display=swap');
+
+/* ---------- CSS-переменные ---------- */
+:root {
+  --pink-light:   #ffe4f0;
+  --pink:         #ffb6d3;
+  --pink-mid:     #ff8ab8;
+  --pink-dark:    #e85d97;
+  --pink-accent:  #ff4d94;
+  --cream:        #fff7fa;
+  --text-dark:    #4a2040;
+  --text-muted:   #8c6278;
+  --white:        #ffffff;
+  --shadow-card:  0 4px 20px rgba(232, 93, 151, .15);
+  --shadow-hover: 0 8px 30px rgba(232, 93, 151, .25);
+  --border-sketch: 2px solid var(--pink-mid);
+  --radius:       18px;
+  --radius-lg:    28px;
+  --font-main:    'Comfortaa', cursive;
+  --font-hand:    'Patrick Hand', cursive;
+}
+
+/* ---------- Общие стили ---------- */
+body {
+  font-family: var(--font-main);
+  background-color: var(--cream);
+  color: var(--text-dark);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Мультяшный «рисованный» фон — мягкие кружки */
+body::before {
+  content: '';
+  position: fixed;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--pink-light) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: .6;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -80px;
+  left: -80px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, var(--pink) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: .35;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-hand);
+  color: var(--pink-dark);
+}
+
+a {
+  color: var(--pink-accent);
+  transition: color .2s;
+}
+
+a:hover {
+  color: var(--pink-dark);
+}
+
+/* ---------- Логотип ---------- */
+.logo-icon {
+  /* transition: transform .3s; */
+}
+
+/* .logo-icon:hover {
+  transform: rotate(-10deg) scale(1.1);
+} */
+
+.logo-icon text {
+  fill: var(--pink-dark);
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* ---------- Навбар ---------- */
+.navbar-custom {
+  background: linear-gradient(135deg, var(--pink-mid), var(--pink-accent));
+  border-bottom: 3px dashed var(--pink-dark);
+  box-shadow: 0 3px 12px rgba(232, 93, 151, .2);
+}
+
+.navbar-custom .navbar-brand {
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  color: var(--white) !important;
+  letter-spacing: 1px;
+}
+
+.navbar-custom .nav-link {
+  color: var(--white) !important;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: .4rem .9rem !important;
+  transition: background .2s, transform .15s;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+  background: rgba(255, 255, 255, .25);
+  transform: scale(1.05);
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: rgba(255, 255, 255, .5);
+}
+
+.navbar-custom .navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- Область уведомлений ---------- */
+#notification-area {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1080;
+  width: 360px;
+  max-width: 90vw;
+}
+
+#notification-area .alert {
+  border-radius: var(--radius);
+  border: var(--border-sketch);
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  animation: slideIn .35s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ---------- Карточки / секции ---------- */
+.card-cartoon {
+  background: var(--white);
+  border: var(--border-sketch);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card-cartoon:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.section-title {
+  font-family: var(--font-hand);
+  font-size: 2rem;
+  color: var(--pink-dark);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--pink-mid) 0,
+    var(--pink-mid) 8px,
+    transparent 8px,
+    transparent 14px
+  );
+  border-radius: 2px;
+}
+
+/* ---------- Иконки преимуществ ---------- */
+.advantage-icon {
+  font-size: 2.8rem;
+  margin-bottom: .5rem;
+  line-height: 1;
+}
+
+/* ---------- Кнопки ---------- */
+.btn-pink {
+  background: linear-gradient(135deg, var(--pink-mid), var(--pink-accent));
+  color: var(--white);
+  border: none;
+  border-radius: 14px;
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  padding: .5rem 1.4rem;
+  box-shadow: 0 3px 10px rgba(255, 77, 148, .3);
+  transition: transform .15s, box-shadow .2s;
+}
+
+.btn-pink:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 18px rgba(255, 77, 148, .4);
+  color: var(--white);
+}
+
+.btn-outline-pink {
+  color: var(--pink-accent);
+  border: 2px solid var(--pink-mid);
+  border-radius: 14px;
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  padding: .5rem 1.4rem;
+  background: transparent;
+  transition: background .2s, color .2s, transform .15s;
+}
+
+.btn-outline-pink:hover {
+  background: var(--pink-light);
+  color: var(--pink-dark);
+  transform: scale(1.05);
+}
+
+/* ---------- Таблицы ---------- */
+.table-cartoon {
+  border-collapse: separate;
+  border-spacing: 0 .45rem;
+}
+
+.table-cartoon thead th {
+  background: var(--pink-mid);
+  color: var(--white);
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  border: none;
+  padding: .7rem 1rem;
+}
+
+.table-cartoon thead th:first-child { border-radius: 14px 0 0 14px; }
+.table-cartoon thead th:last-child  { border-radius: 0 14px 14px 0; }
+
+.table-cartoon tbody tr {
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(232, 93, 151, .08);
+  /* transition: background .2s, transform .15s; */
+}
+
+/* .table-cartoon tbody tr:hover {
+  background: var(--pink-light);
+  transform: scale(1.01);
+} */
+
+.table-cartoon tbody td {
+  border: none;
+  padding: .65rem 1rem;
+  vertical-align: middle;
+}
+
+.table-cartoon tbody td:first-child { border-radius: 14px 0 0 14px; }
+.table-cartoon tbody td:last-child  { border-radius: 0 14px 14px 0; }
+
+/* Выделенная строка (выбранный репетитор) */
+.table-cartoon tbody tr.selected {
+  background: var(--pink);
+  color: var(--white);
+}
+
+/* ---------- Аватарка-заглушка репетитора ---------- */
+.tutor-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), var(--pink-accent));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: 2px dashed var(--pink-dark);
+}
+
+/* ---------- Пагинация ---------- */
+.pagination .page-link {
+  color: var(--pink-accent);
+  border: 2px solid var(--pink);
+  border-radius: 12px !important;
+  margin: 0 3px;
+  font-family: var(--font-hand);
+  transition: background .2s, color .2s;
+}
+
+.pagination .page-link:hover {
+  background: var(--pink-light);
+  color: var(--pink-dark);
+}
+
+.pagination .page-item.active .page-link {
+  background: var(--pink-accent);
+  border-color: var(--pink-accent);
+  color: var(--white);
+}
+
+/* ---------- Модальные окна ---------- */
+.modal-content {
+  border: var(--border-sketch);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--pink-mid), var(--pink-accent));
+  color: var(--white);
+  border-bottom: 3px dashed var(--pink-dark);
+}
+
+.modal-header .modal-title {
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+.modal-body {
+  background: var(--cream);
+}
+
+.modal-footer {
+  border-top: 2px dashed var(--pink);
+  background: var(--cream);
+}
+
+/* ---------- Формы ---------- */
+.form-control,
+.form-select {
+  border: 2px solid var(--pink);
+  border-radius: 12px;
+  font-family: var(--font-main);
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--pink-accent);
+  box-shadow: 0 0 0 .2rem rgba(255, 77, 148, .2);
+}
+
+.form-label {
+  font-family: var(--font-hand);
+  color: var(--pink-dark);
+  font-size: 1.05rem;
+}
+
+.form-check-input:checked {
+  background-color: var(--pink-accent);
+  border-color: var(--pink-accent);
+}
+
+/* ---------- Футер ---------- */
+.footer-custom {
+  background: linear-gradient(135deg, var(--pink-mid), var(--pink-accent));
+  color: var(--white);
+  border-top: 3px dashed var(--pink-dark);
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.footer-custom a {
+  color: var(--pink-light);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.footer-custom a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.footer-custom h5 {
+  font-family: var(--font-hand);
+  color: var(--white);
+}
+
+/* ---------- «Нарисованные» декоративные элементы ---------- */
+.doodle-divider {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  color: var(--pink);
+  letter-spacing: 6px;
+  user-select: none;
+}
+
+/* ---------- Бейдж скидки / надбавки ---------- */
+.badge-discount {
+  background: #a8e6cf;
+  color: #2d6a4f;
+  border-radius: 10px;
+  font-family: var(--font-hand);
+  font-size: .9rem;
+  padding: .3rem .7rem;
+}
+
+.badge-surcharge {
+  background: #ffd3b6;
+  color: #8b4513;
+  border-radius: 10px;
+  font-family: var(--font-hand);
+  font-size: .9rem;
+  padding: .3rem .7rem;
+}
+
+/* ---------- Адаптивность ---------- */
+
+/* Планшеты (md и ниже) */
+@media (max-width: 991.98px) {
+  .navbar-custom .navbar-collapse {
+    background: var(--pink-accent);
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: .8rem;
+    margin-top: .4rem;
+  }
+}
+
+/* Телефоны (sm и ниже) */
+@media (max-width: 767.98px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  #notification-area {
+    width: 95vw;
+    right: 2.5vw;
+    top: 70px;
+  }
+
+  .card-cartoon {
+    border-radius: var(--radius);
+    padding: 1rem !important;
+  }
+
+  .advantage-icon {
+    font-size: 2rem;
+  }
+
+  /* Таблицы: горизонтальный скролл уже через .table-responsive,
+     но уменьшим шрифт для читабельности */
+  .table-cartoon thead th,
+  .table-cartoon tbody td {
+    font-size: .85rem;
+    padding: .5rem .6rem;
+  }
+
+  .btn-pink.btn-sm,
+  .btn-outline-pink.btn-sm {
+    font-size: .8rem;
+    padding: .3rem .7rem;
+  }
+
+  .tutor-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .footer-custom {
+    text-align: center;
+  }
+
+  .doodle-divider {
+    margin: 1.2rem 0;
+  }
+
+  .modal-dialog {
+    margin: .5rem;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 575.98px) {
+  .navbar-custom .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  h2.section-title {
+    font-size: 1.3rem;
+  }
+
+  .card-cartoon h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* ========================================
+   КАРТА УЧЕБНЫХ РЕСУРСОВ
+   ======================================== */
+
+.map-container {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(232, 93, 151, .15);
+  border: 3px solid var(--pink);
+}
+
+.resources-list-container {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.resources-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.resources-list-container::-webkit-scrollbar-track {
+  background: var(--cream);
+  border-radius: 10px;
+}
+
+.resources-list-container::-webkit-scrollbar-thumb {
+  background: var(--pink-mid);
+  border-radius: 10px;
+}
+
+.resources-list-container::-webkit-scrollbar-thumb:hover {
+  background: var(--pink-dark);
+}
+
+.resource-item {
+  background: var(--white);
+  border: 2px solid var(--pink-light);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  /* transition: all .2s; */
+  box-shadow: 0 2px 8px rgba(232, 93, 151, .08);
+}
+
+/* .resource-item:hover {
+  border-color: var(--pink-mid);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(232, 93, 151, .15);
+} */
+
+.resource-item.active {
+  background: var(--pink-light);
+  border-color: var(--pink-dark);
+  box-shadow: 0 4px 16px rgba(232, 93, 151, .25);
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: .5rem;
+}
+
+.resource-name {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--pink-dark);
+  flex: 1;
+}
+
+.resource-type {
+  display: inline-block;
+  padding: .25rem .6rem;
+  border-radius: 12px;
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-left: .5rem;
+}
+
+.resource-type-school {
+  background: #ffe4f0;
+  color: #d6336c;
+}
+
+.resource-type-library {
+  background: #e0f7ff;
+  color: #0084b4;
+}
+
+.resource-type-cafe {
+  background: #fff0f5;
+  color: #ff1493;
+}
+
+.resource-type-center {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.resource-type-club {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.resource-address,
+.resource-hours {
+  font-size: .85rem;
+  color: #666;
+  margin-bottom: .3rem;
+}
+
+.resource-description {
+  font-size: .85rem;
+  color: #555;
+  margin-top: .5rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 991px) {
+  #yandex-map {
+    height: 400px !important;
+    margin-bottom: 1rem;
+  }
+
+  .resources-list-container {
+    max-height: 400px;
+  }
+}

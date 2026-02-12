@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinguaPlay — Языковая школа</title>
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+  <!-- Наши стили -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Навбар ===== -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <svg class="logo-icon me-2" width="36" height="36" viewBox="0 0 100 100" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" fill="#fff" stroke="#e85d97" stroke-width="4"
+                  stroke-dasharray="8 4"/>
+          <text x="50" y="62" text-anchor="middle" font-size="42"
+                font-family="Patrick Hand, cursive">Lp</text>
+        </svg>
+        LinguaPlay
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#courses-section">Курсы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about-section">О нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">Контакты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="account.html">Личный кабинет</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Область уведомлений ===== -->
+  <div id="notification-area"></div>
+
+  <main class="container py-4">
+
+    <!-- ===== Описание школы ===== -->
+    <section id="about-section" class="mb-5">
+      <h2 class="section-title">О нашей школе</h2>
+      <div class="card-cartoon p-4">
+        <p class="mb-2">
+          Добро пожаловать в <strong>LinguaPlay</strong>! Мы верим, что изучение
+          языков должно быть весёлым и увлекательным, как игра. Наша миссия —
+          помочь каждому заговорить на новом языке с уверенностью и удовольствием.
+        </p>
+        <p class="mb-2">
+          Мы предлагаем курсы для всех уровней — от начинающих до продвинутых.
+          Опытные преподаватели и репетиторы используют современные методики
+          обучения, а уютная атмосфера наших занятий помогает раскрыть языковой
+          потенциал каждого студента.
+        </p>
+        <p class="mb-0">
+          Английский, испанский, французский, немецкий, китайский и многие другие
+          языки ждут вас. Начните своё путешествие в мир языков уже сегодня!
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Преимущества (Bootstrap Grid) ===== -->
+    <section class="mb-5">
+      <h2 class="section-title">Почему стоит учить языки?</h2>
+      <div class="row g-4">
+        <div class="col-md-4 col-sm-6">
+          <div class="card-cartoon p-4 text-center h-100">
+            <div class="advantage-icon">&#127758;</div>
+            <h4>Глобальное общение</h4>
+            <p>Разговаривайте с людьми по всему миру, путешествуйте без языковых
+               барьеров и открывайте новые горизонты.</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="card-cartoon p-4 text-center h-100">
+            <div class="advantage-icon">&#128188;</div>
+            <h4>Карьерный рост</h4>
+            <p>Знание иностранных языков открывает двери к международным
+               вакансиям и повышает вашу ценность на рынке труда.</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="card-cartoon p-4 text-center h-100">
+            <div class="advantage-icon">&#129504;</div>
+            <h4>Развитие мышления</h4>
+            <p>Изучение языков тренирует память, внимание, креативность
+               и способность к многозадачности.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="doodle-divider">~ ~ ~ ~ ~</div>
+
+    <!-- ===== Предлагаемые курсы ===== -->
+    <section id="courses-section" class="mb-5">
+      <h2 class="section-title">Предлагаемые курсы</h2>
+
+      <!-- Поиск курсов -->
+      <div class="card-cartoon p-3 mb-3">
+        <div class="row g-2 align-items-end">
+          <div class="col-md-6">
+            <label class="form-label" for="course-search-name">Поиск по названию</label>
+            <input type="text" class="form-control" id="course-search-name"
+                   placeholder="Введите название курса...">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="course-search-level">Уровень</label>
+            <select class="form-select" id="course-search-level">
+              <option value="">Все уровни</option>
+              <option value="Beginner">Начальный</option>
+              <option value="Intermediate">Средний</option>
+              <option value="Advanced">Продвинутый</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-pink w-100" id="course-search-btn">Поиск</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Таблица курсов -->
+      <div class="table-responsive">
+        <table class="table table-cartoon">
+          <thead>
+            <tr>
+              <th>Название</th>
+              <th>Уровень</th>
+              <th>Преподаватель</th>
+              <th>Недель</th>
+              <th>Ч/нед</th>
+              <th>Руб./час</th>
+              <th>Действие</th>
+            </tr>
+          </thead>
+          <tbody id="courses-table-body">
+            <!-- Заполняется из JS -->
+          </tbody>
+        </table>
+      </div>
+      <div id="courses-pagination"></div>
+    </section>
+
+    <div class="doodle-divider">~ ~ ~ ~ ~</div>
+
+    <!-- ===== Репетиторы ===== -->
+    <section id="tutors-section" class="mb-5">
+      <h2 class="section-title">Доступные репетиторы</h2>
+
+      <!-- Поиск репетиторов -->
+      <div class="card-cartoon p-3 mb-3">
+        <div class="row g-2 align-items-end">
+          <div class="col-md-5">
+            <label class="form-label" for="tutor-search-level">Уровень языка</label>
+            <select class="form-select" id="tutor-search-level">
+              <option value="">Все уровни</option>
+              <option value="Beginner">Начальный</option>
+              <option value="Intermediate">Средний</option>
+              <option value="Advanced">Продвинутый</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <label class="form-label" for="tutor-search-exp">Опыт (лет, от)</label>
+            <input type="number" class="form-control" id="tutor-search-exp"
+                   placeholder="Например, 3" min="0">
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-pink w-100" id="tutor-search-btn">Поиск</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Таблица репетиторов -->
+      <div class="table-responsive">
+        <table class="table table-cartoon">
+          <thead>
+            <tr>
+              <th>Фото</th>
+              <th>Имя</th>
+              <th>Уровень</th>
+              <th>Языки</th>
+              <th>Опыт (лет)</th>
+              <th>Руб./час</th>
+              <th>Выбрать</th>
+            </tr>
+          </thead>
+          <tbody id="tutors-table-body">
+            <!-- Заполняется из JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Кнопка заявки на репетитора -->
+      <button class="btn btn-pink" id="request-tutor-btn" disabled>
+        Запросить занятие с репетитором
+      </button>
+    </section>
+
+    <div class="doodle-divider">~ ~ ~ ~ ~</div>
+
+    <!-- ===== Карта учебных ресурсов ===== -->
+    <section id="resources-section" class="mb-5">
+      <h2 class="section-title">Карта учебных ресурсов</h2>
+      <p class="text-center mb-4">
+        Языковые школы, библиотеки, культурные центры и разговорные клубы Москвы
+      </p>
+
+      <!-- Фильтры -->
+      <div class="card-cartoon p-3 mb-3">
+        <div class="row g-2 align-items-end">
+          <div class="col-md-6">
+            <label class="form-label" for="resource-search">Поиск по названию или адресу</label>
+            <input type="text" class="form-control" id="resource-search"
+                   placeholder="Введите название или адрес...">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="resource-type-filter">Тип ресурса</label>
+            <select class="form-select" id="resource-type-filter">
+              <option value="">Все типы</option>
+              <option value="school">Языковые школы</option>
+              <option value="library">Библиотеки</option>
+              <option value="cafe">Языковые кафе</option>
+              <option value="center">Культурные центры</option>
+              <option value="club">Языковые клубы</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-pink w-100" onclick="filterResources()">Найти</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карта и список -->
+      <div class="row g-3">
+        <div class="col-lg-7">
+          <div class="map-container">
+            <div id="yandex-map" style="width: 100%; height: 500px;"></div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="resources-list-container">
+            <div id="resources-list">
+              <!-- Заполняется из JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Модальное окно: заявка на курс ===== -->
+  <div class="modal fade" id="courseModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseModalLabel">Оформление заявки</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="course-order-form">
+            <!-- Заполняется динамически из JS -->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-pink" data-bs-dismiss="modal">
+            Отмена
+          </button>
+          <button type="button" class="btn btn-pink" id="course-order-submit">
+            Отправить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Модальное окно: запрос репетитора ===== -->
+  <div class="modal fade" id="tutorModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Запрос на занятие с репетитором</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="tutor-request-form">
+            <!-- Заполняется динамически из JS -->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-pink" data-bs-dismiss="modal">
+            Закрыть
+          </button>
+          <button type="button" class="btn btn-pink" id="tutor-order-submit">
+            Отправить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Футер ===== -->
+  <footer class="footer-custom" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>LinguaPlay</h5>
+          <p>Языковая школа, где учиться — одно удовольствие!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Контакты</h5>
+          <p>
+            Email: info@linguaplay.ru<br>
+            Телефон: +7 (495) 123-45-67
+          </p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Мы в соцсетях</h5>
+          <a href="#" class="me-2">VK</a>
+          <a href="#" class="me-2">Telegram</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Яндекс.Карты API -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=4b0e5b16-a8e3-4122-9805-dbf59c7c3738&lang=ru_RU"></script>
+  <!-- Наши скрипты -->
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
